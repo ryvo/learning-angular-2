@@ -3,13 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes} from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
-import { EnvironmentSpecificResolver} from './services/environment-specific-resolver';
-import { EnvironmentSpecificService} from './services/environment-specific.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full', resolve: { envSpecific: EnvironmentSpecificResolver}},
-  { path: 'login', component: LoginComponent, canActivate: [AuthGuard], resolve: { envSpecific: EnvironmentSpecificResolver}}
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
+  { path: 'login', component: LoginComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
@@ -20,9 +18,7 @@ const routes: Routes = [
   ],
   providers: [
     AuthGuard,
-    HttpClient,
-    EnvironmentSpecificResolver,
-    EnvironmentSpecificService
+    HttpClient
   ],
   declarations: [],
   exports: [
