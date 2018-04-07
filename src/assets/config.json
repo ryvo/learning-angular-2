@@ -1,3 +1,6 @@
 {
-  "authenticationServerURL": "http://localhost:8200"
+  "clientID": "audanext-web",
+  "clientSecret": "audanext-web",
+  "oauthGetTokenURL": "https://dev-nxt.cloudapp.net/auth/oauth/token",
+  "apiURL": "https://dev-nxt.cloudapp.net/auth/api/v1"
 }
